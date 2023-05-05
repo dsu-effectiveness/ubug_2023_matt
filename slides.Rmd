@@ -1,0 +1,73 @@
+---
+title: "Your title"
+output: 
+  xaringan::moon_reader:
+    includes:
+      after_body: insert-logo.html
+    css: custom.css
+    nature:
+      ratio: '16:9'
+      highlightStyle: github
+      countIncrementalSlides: false
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+  echo = FALSE,
+  warning = FALSE,
+  message = FALSE
+  )
+```
+
+```{r load libraries, include=FALSE}
+library(gt)
+library(here)
+library(shiny)
+library(purrr)
+#source(here::here('R', 'munge.R'))
+#source(here::here('R', 'make_slides.R'))
+library(emo)
+```
+
+class: opener
+# Welcome 🎉
+
+---
+class: inverse, left
+# Slide 1
+
+This is my first slide. Inverse make the background dark. Left aligns the text on the slide.
+
+---
+class: center
+# Slide 2
+
+This is my second slide. The background is white because there is not class opener or center. The slide is also center aligned because it has a class center. I am going to include a picture.
+
+<img style="margin-top:-5px", src="images/code_love.jpg" alt="" width="300">
+
+
+---
+class: left
+# Slide 3
+
+## R code
+```{r eval = FALSE, echo = TRUE}
+table_df <- input_df %>% 
+  select(my, favorite, columns) %>% 
+  filter(my == 'something') %>% 
+  group_by(favorite, columns) %>% 
+  something()
+```
+
+---
+class: left
+# Slide 4
+
+## SQL Code
+```{sql eval = FALSE, echo = TRUE}
+SELECT *
+  FROM my_table
+ WHERE validated = TRUE
+  AND  sloppy = FALSE
+```
